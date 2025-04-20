@@ -1,0 +1,202 @@
+import Image from "next/image"
+import Link from "next/link"
+import { DownloadButton } from "@/components/download-button"
+import { PhonePreview } from "@/components/phone-preview"
+import StructuredData from "./structured-data"
+
+export default function Home() {
+  return (
+    <main className="min-h-screen">
+      <StructuredData />
+
+      {/* Hero Section with Gradient Background */}
+      <section className="relative w-full overflow-hidden bg-gradient-to-br from-pink-400 via-purple-400 to-green-300">
+        <div className="container px-4 py-8 mx-auto">
+          {/* Navigation */}
+          <nav className="flex items-center justify-between py-4">
+            <div className="flex items-center">
+              <Link href="/" className="flex items-center">
+                <Image src="/images/cln-logo.png" alt="cln. logo" width={120} height={50} className="h-10 w-auto" />
+              </Link>
+            </div>
+            <div className="hidden md:flex items-center space-x-8">
+              <Link href="#how-it-works" className="text-white hover:text-white/80 transition">
+                How it works
+              </Link>
+              <Link href="#download" className="text-white hover:text-white/80 transition">
+                Download
+              </Link>
+              <Link href="#about" className="text-white hover:text-white/80 transition">
+                About
+              </Link>
+            </div>
+            <DownloadButton className="bg-black text-white hover:bg-black/80">Download</DownloadButton>
+          </nav>
+
+          {/* Membership Banner */}
+          <div className="flex flex-wrap items-center justify-start gap-4 mt-8">
+            <div className="bg-black/80 text-white text-sm px-4 py-2 rounded-full">Early Access Available</div>
+            <Link
+              href="https://apps.apple.com/my/app/cln-swipe-to-clean/id6744550725"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-sm flex items-center gap-1 hover:underline"
+            >
+              Download now <span className="text-lg">→</span>
+            </Link>
+          </div>
+
+          {/* Hero Content */}
+          <div className="grid md:grid-cols-2 gap-12 items-center py-12 md:py-20">
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
+                Your camera roll's best friend
+              </h1>
+              <p className="text-xl text-white/90 max-w-md">
+                Powerful, intuitive photo management with Tinder-like swiping to help you declutter your gallery
+                effortlessly.
+              </p>
+              <DownloadButton className="bg-black text-white hover:bg-black/80 px-8 py-6 text-lg">
+                Get started
+              </DownloadButton>
+            </div>
+
+            <div className="relative flex justify-center md:justify-end">
+              <PhonePreview />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* How It Works Section */}
+      <section id="how-it-works" className="py-20 bg-white">
+        <div className="container px-4 mx-auto">
+          <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">How cln. works</h2>
+
+          <div className="grid md:grid-cols-3 gap-8">
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-xl font-bold">1</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Connect your photos</h3>
+              <p className="text-gray-600">Grant access to your photo library and let cln. analyze your collection.</p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-xl font-bold">2</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Swipe through photos</h3>
+              <p className="text-gray-600">Use intuitive swipe gestures to keep, delete, or bookmark your photos.</p>
+            </div>
+
+            <div className="text-center p-6">
+              <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-white text-xl font-bold">3</span>
+              </div>
+              <h3 className="text-xl font-semibold mb-2">Enjoy a cleaner gallery</h3>
+              <p className="text-gray-600">Watch your photo collection become organized and clutter-free in minutes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Download Section */}
+      <section id="download" className="py-20 bg-gradient-to-br from-pink-400 via-purple-400 to-green-300 text-white">
+        <div className="container px-4 mx-auto text-center">
+          <div className="max-w-2xl mx-auto">
+            <h2 className="text-3xl md:text-4xl font-bold mb-6">Ready to declutter your photo gallery?</h2>
+            <p className="text-xl mb-8">Download cln. today and experience the joy of a tidy photo collection.</p>
+            <div className="flex justify-center">
+              <DownloadButton className="bg-black hover:bg-black/80 text-white px-8 py-6 text-lg">
+                Download for iOS
+              </DownloadButton>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Footer */}
+      <footer className="bg-black text-white py-12">
+        <div className="container px-4 mx-auto">
+          <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <Image
+                src="/images/cln-logo-white.png"
+                alt="cln. logo"
+                width={80}
+                height={40}
+                className="h-8 w-auto mb-4"
+              />
+              <p className="text-sm text-gray-400">
+                A photo cleaning app that uses tinder like swiping to go through your photo gallery effortlessly.
+              </p>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-4">Company</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <Link
+                    href="https://riskstudios.my"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition"
+                  >
+                    Risk Creatives
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white transition">
+                    About
+                  </Link>
+                </li>
+              </ul>
+            </div>
+
+            <div>
+              <h3 className="font-semibold mb-4">Connect</h3>
+              <ul className="space-y-2 text-sm text-gray-400">
+                <li>
+                  <Link
+                    href="https://www.instagram.com/cln.it?igsh=M3oycmZ5dGIwZ21r"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-white transition"
+                  >
+                    Instagram
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/privacy-policy.html" className="hover:text-white transition">
+                    Privacy Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link href="#" className="hover:text-white transition">
+                    Terms
+                  </Link>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <div className="border-t border-gray-800 mt-12 pt-8 text-sm text-gray-400">
+            <p>
+              © {new Date().getFullYear()} cln. by{" "}
+              <Link
+                href="https://riskstudios.my"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="hover:text-white transition"
+              >
+                Risk Creatives
+              </Link>
+              . All rights reserved.
+            </p>
+          </div>
+        </div>
+      </footer>
+    </main>
+  )
+}
