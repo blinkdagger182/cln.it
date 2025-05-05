@@ -7,9 +7,9 @@ const inter = Inter({ subsets: ["latin"] })
 
 export const metadata = {
   metadataBase: new URL("https://cln.it.com"),
-  title: "cln. your camera roll's best friend",
+  title: "cln. your Camera Roll's Best Friend",
   description:
-    "A photo cleaning app that uses tinder-like swiping to go through your photo gallery effortlessly. Declutter your photos in minutes.",
+    "Swipe to wipe. Clean up your gallery with fast, intuitive gestures that make photo decluttering effortless and even fun.",
   keywords: [
     "photo cleaning",
     "photo management",
@@ -28,9 +28,9 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://cln.it.com",
-    title: "cln. your camera roll's best friend",
+    title: "cln. your Camera Roll's Best Friend",
     description:
-      "A photo cleaning app that uses tinder-like swiping to declutter your gallery effortlessly. Clean, organize, and enjoy your photos again.",
+      "Swipe to wipe. Clean up your gallery with fast, intuitive gestures that make photo decluttering effortless and even fun.",
     siteName: "cln.",
     images: [
       {
@@ -45,9 +45,9 @@ export const metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "cln. your camera roll's best friend",
+    title: "cln. your Camera Roll's Best Friend",
     description:
-      "A photo cleaning app that uses tinder-like swiping to declutter your gallery effortlessly. Clean, organize, and enjoy your photos again.",
+      "Swipe to wipe. Clean up your gallery with fast, intuitive gestures that make photo decluttering effortless and even fun.",
     images: ["/images/og-image.png"],
     creator: "@cln_it",
   },

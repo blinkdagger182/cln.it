@@ -37,11 +37,11 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-12 items-center py-12 md:py-20">
             <div className="space-y-6">
               <h1 className="text-5xl md:text-6xl font-bold text-white leading-tight">
-                Your camera roll's best friend
+                Your Camera Roll's Best Friend
               </h1>
               <p className="text-xl text-white/90 max-w-md">
-                Powerful, intuitive photo management with Tinder-like swiping to help you declutter your gallery
-                effortlessly.
+                Swipe to wipe. Clean up your gallery with fast, intuitive gestures that make photo decluttering
+                effortless and even fun.
               </p>
               <DownloadButton className="bg-black text-white hover:bg-black/80 px-8 py-6 text-lg">
                 Get started
