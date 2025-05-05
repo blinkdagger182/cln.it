@@ -76,7 +76,9 @@ export default function Home() {
           <div className="grid md:grid-cols-3 gap-8">
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-gradient-to-r from-pink-400 to-yellow-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-xl font-bold">1</span>
+                <span className="text-3xl" role="img" aria-label="Camera">
+                  📱
+                </span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Connect your photos</h3>
               <p className="text-gray-600">Grant access to your photo library and let cln. analyze your collection.</p>
@@ -84,7 +86,9 @@ export default function Home() {
 
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-gradient-to-r from-blue-400 to-green-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-xl font-bold">2</span>
+                <span className="text-3xl" role="img" aria-label="Swipe">
+                  👆
+                </span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Swipe through photos</h3>
               <p className="text-gray-600">Use intuitive swipe gestures to keep, delete, or bookmark your photos.</p>
@@ -92,7 +96,9 @@ export default function Home() {
 
             <div className="text-center p-6">
               <div className="w-16 h-16 bg-gradient-to-r from-purple-400 to-pink-400 rounded-full flex items-center justify-center mx-auto mb-4">
-                <span className="text-white text-xl font-bold">3</span>
+                <span className="text-3xl" role="img" aria-label="Sparkle">
+                  ✨
+                </span>
               </div>
               <h3 className="text-xl font-semibold mb-2">Enjoy a cleaner gallery</h3>
               <p className="text-gray-600">Watch your photo collection become organized and clutter-free in minutes.</p>
