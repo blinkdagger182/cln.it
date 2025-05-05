@@ -23,28 +23,15 @@ export default function Home() {
               <Link href="#how-it-works" className="text-white hover:text-white/80 transition">
                 How it works
               </Link>
+              <Link href="#discover" className="text-white hover:text-white/80 transition">
+                Discover
+              </Link>
               <Link href="#download" className="text-white hover:text-white/80 transition">
                 Download
-              </Link>
-              <Link href="#about" className="text-white hover:text-white/80 transition">
-                About
               </Link>
             </div>
             <DownloadButton className="bg-black text-white hover:bg-black/80">Download</DownloadButton>
           </nav>
-
-          {/* Membership Banner */}
-          <div className="flex flex-wrap items-center justify-start gap-4 mt-8">
-            <div className="bg-black/80 text-white text-sm px-4 py-2 rounded-full">Early Access Available</div>
-            <Link
-              href="https://apps.apple.com/my/app/cln-swipe-to-clean/id6744550725"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white text-sm flex items-center gap-1 hover:underline"
-            >
-              Download now <span className="text-lg">→</span>
-            </Link>
-          </div>
 
           {/* Hero Content */}
           <div className="grid md:grid-cols-2 gap-12 items-center py-12 md:py-20">
@@ -102,6 +89,75 @@ export default function Home() {
               </div>
               <h3 className="text-xl font-semibold mb-2">Enjoy a cleaner gallery</h3>
               <p className="text-gray-600">Watch your photo collection become organized and clutter-free in minutes.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Discover Section */}
+      <section id="discover" className="py-20 bg-gray-50">
+        <div className="container px-4 mx-auto">
+          <div className="flex flex-col items-center mb-12">
+            <Image src="/images/cln-plus-logo.png" alt="cln+" width={200} height={100} className="mb-6" />
+            <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-400 to-yellow-400 rounded-full text-white text-sm font-medium mb-6">
+              Premium Feature
+            </div>
+            <h2 className="text-3xl md:text-4xl font-bold text-center">Smart Photo Organization</h2>
+          </div>
+
+          <div className="grid md:grid-cols-2 gap-16 items-center">
+            <div className="order-2 md:order-1">
+              <div className="space-y-6">
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <h3 className="text-xl font-semibold mb-2 flex items-center">
+                    <span className="w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white mr-3">
+                      1
+                    </span>
+                    Automatic Album Creation
+                  </h3>
+                  <p className="text-gray-600">
+                    cln+ intelligently groups your photos into albums like "Evening at 17 Jun 2024" based on time,
+                    location, and content.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <h3 className="text-xl font-semibold mb-2 flex items-center">
+                    <span className="w-8 h-8 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white mr-3">
+                      2
+                    </span>
+                    Duplicate Detection
+                  </h3>
+                  <p className="text-gray-600">
+                    Identify and swipe through similar photos taken in bursts, helping you keep only the best shots from
+                    each moment.
+                  </p>
+                </div>
+
+                <div className="bg-white p-6 rounded-xl shadow-sm">
+                  <h3 className="text-xl font-semibold mb-2 flex items-center">
+                    <span className="w-8 h-8 bg-gradient-to-r from-blue-400 to-green-400 rounded-full flex items-center justify-center text-white mr-3">
+                      3
+                    </span>
+                    Batch Processing
+                  </h3>
+                  <p className="text-gray-600">
+                    Clean multiple similar photos at once with our intuitive batch swiping feature, saving you time and
+                    effort.
+                  </p>
+                </div>
+              </div>
+            </div>
+
+            <div className="order-1 md:order-2 flex justify-center">
+              <Image
+                src="/images/cln-plus-screen.png"
+                alt="cln+ Discover interface showing photo albums"
+                width={350}
+                height={700}
+                className="w-auto h-auto max-w-full"
+                priority
+              />
             </div>
           </div>
         </div>
