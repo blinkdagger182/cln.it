@@ -102,7 +102,8 @@ export default function Home() {
             <div className="inline-flex items-center px-4 py-2 bg-gradient-to-r from-pink-400 to-yellow-400 rounded-full text-white text-sm font-medium mb-6">
               Premium Feature
             </div>
-            <h2 className="text-3xl md:text-4xl font-bold text-center">Smart Photo Organization</h2>
+            <h2 className="text-3xl md:text-4xl font-bold text-center">Unlock cln+</h2>
+            <p className="text-xl text-center text-gray-600 mt-3 max-w-2xl">Smarter, faster, and more powerful.</p>
           </div>
 
           <div className="grid md:grid-cols-2 gap-16 items-center">
@@ -113,11 +114,11 @@ export default function Home() {
                     <span className="w-8 h-8 bg-gradient-to-r from-pink-400 to-purple-400 rounded-full flex items-center justify-center text-white mr-3">
                       1
                     </span>
-                    Automatic Album Creation
+                    Smart Album Creation
                   </h3>
                   <p className="text-gray-600">
-                    cln+ intelligently groups your photos into albums like "Evening at 17 Jun 2024" based on time,
-                    location, and content.
+                    cln+ automatically groups your photos by time and location—like "Evening at 17 Jun 2024"—making it
+                    easier to review memories in context.
                   </p>
                 </div>
 
@@ -126,11 +127,10 @@ export default function Home() {
                     <span className="w-8 h-8 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full flex items-center justify-center text-white mr-3">
                       2
                     </span>
-                    Duplicate Detection
+                    Relevance-Based Sorting
                   </h3>
                   <p className="text-gray-600">
-                    Identify and swipe through similar photos taken in bursts, helping you keep only the best shots from
-                    each moment.
+                    Sort albums by most relevant or most photos to quickly focus on what matters most.
                   </p>
                 </div>
 
@@ -139,11 +139,11 @@ export default function Home() {
                     <span className="w-8 h-8 bg-gradient-to-r from-blue-400 to-green-400 rounded-full flex items-center justify-center text-white mr-3">
                       3
                     </span>
-                    Batch Processing
+                    Batch Swipe Review
                   </h3>
                   <p className="text-gray-600">
-                    Clean multiple similar photos at once with our intuitive batch swiping feature, saving you time and
-                    effort.
+                    Swipe through grouped photos to delete, save, or mark as maybe—freeing up storage while keeping your
+                    best shots.
                   </p>
                 </div>
               </div>
