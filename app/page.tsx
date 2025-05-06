@@ -16,7 +16,13 @@ export default function Home() {
           <nav className="flex items-center justify-between py-4">
             <div className="flex items-center">
               <Link href="/" className="flex items-center">
-                <Image src="/images/cln-logo.png" alt="cln. logo" width={120} height={50} className="h-10 w-auto" />
+                <Image
+                  src="/images/cln-logo-rounded.png"
+                  alt="cln. logo"
+                  width={100}
+                  height={40}
+                  className="h-8 md:h-10 w-auto"
+                />
               </Link>
             </div>
             <div className="hidden md:flex items-center space-x-8">
@@ -33,6 +39,19 @@ export default function Home() {
             <DownloadButton className="bg-black text-white hover:bg-black/80">Download</DownloadButton>
           </nav>
 
+          {/* Membership Banner */}
+          <div className="flex flex-wrap items-center justify-start gap-4 mt-8">
+            <div className="bg-black/80 text-white text-sm px-4 py-2 rounded-full">cln. is officially live</div>
+            <Link
+              href="https://apps.apple.com/my/app/cln-swipe-to-clean/id6744550725"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white text-sm flex items-center gap-1 hover:underline"
+            >
+              Get Access on iOS <span className="text-lg">→</span>
+            </Link>
+          </div>
+
           {/* Hero Content */}
           <div className="grid md:grid-cols-2 gap-12 items-center py-12 md:py-20">
             <div className="space-y-6">
@@ -43,12 +62,24 @@ export default function Home() {
                 Swipe to wipe. Clean up your gallery with fast, intuitive gestures that make photo decluttering
                 effortless and even fun.
               </p>
-              <DownloadButton className="bg-black text-white hover:bg-black/80 px-8 py-6 text-lg">
-                Get started
-              </DownloadButton>
+              <div>
+                <DownloadButton className="bg-black text-white hover:bg-black/80 px-8 py-6 text-lg">
+                  Get started
+                </DownloadButton>
+              </div>
             </div>
 
-            <div className="relative flex justify-center md:justify-end">
+            <div className="relative flex flex-col items-center md:items-end">
+              {/* Award Image positioned above device preview */}
+              <div className="mb-4 md:mb-6 w-48 md:w-64 lg:w-80">
+                <Image
+                  src="/images/cln-award-large.png"
+                  alt="cln. award - The Winner in our group"
+                  width={320}
+                  height={320}
+                  className="w-full h-auto"
+                />
+              </div>
               <PhonePreview />
             </div>
           </div>
@@ -184,10 +215,10 @@ export default function Home() {
           <div className="grid grid-cols-2 md:grid-cols-3 gap-8">
             <div>
               <Image
-                src="/images/cln-logo-white.png"
+                src="/images/cln-logo-rounded.png"
                 alt="cln. logo"
                 width={80}
-                height={40}
+                height={32}
                 className="h-8 w-auto mb-4"
               />
               <p className="text-sm text-gray-400">
