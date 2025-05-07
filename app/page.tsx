@@ -266,7 +266,7 @@ export default function Home() {
                   </Link>
                 </li>
                 <li>
-                  <Link href="/terms.html" className="hover:text-white transition">
+                  <Link href="https://cln.it.com/terms.html" className="hover:text-white transition">
                     Terms & Conditions
                   </Link>
                 </li>
