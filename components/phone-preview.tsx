@@ -91,7 +91,7 @@ export function PhonePreview() {
     <div className="relative">
       {/* Main Phone (Front) */}
       <div
-        className="relative w-[300px] md:w-[350px] z-10"
+        className="relative w-[300px] md:w-[350px] h-[650px] z-10 overflow-hidden"
         onTouchStart={handleTouchStart}
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
@@ -101,7 +101,7 @@ export function PhonePreview() {
           alt={SCREENSHOTS[currentIndex].alt}
           width={350}
           height={700}
-          className="w-full h-auto"
+          className="phone-screenshot"
           priority
         />
       </div>
@@ -132,13 +132,13 @@ export function PhonePreview() {
       </div>
 
       {/* Second Phone (Background) */}
-      <div className="absolute -right-20 top-10 w-[300px] hidden lg:block transform rotate-6 z-0">
+      <div className="absolute -right-20 top-10 w-[300px] h-[600px] hidden lg:block transform rotate-6 z-0 overflow-hidden">
         <Image
           src={SCREENSHOTS[nextIndex].image || "/placeholder.svg"}
           alt={SCREENSHOTS[nextIndex].alt}
           width={350}
           height={700}
-          className="w-full h-auto opacity-70"
+          className="phone-screenshot opacity-70"
         />
       </div>
 
