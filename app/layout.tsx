@@ -8,8 +8,7 @@ const inter = Inter({ subsets: ["latin"] })
 export const metadata = {
   metadataBase: new URL("https://cln.it.com"),
   title: "cln. your Camera Roll's Best Friend",
-  description:
-    "Swipe to wipe. Clean up your gallery with fast, intuitive gestures that make photo decluttering effortless and even fun.",
+  description: "Clean your Photos. iPhone Photos sucks. Try our app.",
   keywords: [
     "photo cleaning",
     "photo management",
@@ -28,16 +27,15 @@ export const metadata = {
     type: "website",
     locale: "en_US",
     url: "https://cln.it.com",
-    title: "cln. your Camera Roll's Best Friend",
-    description:
-      "Swipe to wipe. Clean up your gallery with fast, intuitive gestures that make photo decluttering effortless and even fun.",
+    title: "Clean your Photos. iPhone Photos sucks. Try our app.",
+    description: "Swipe to wipe. Clean up your gallery with fast, intuitive gestures.",
     siteName: "cln.",
     images: [
       {
-        url: "/images/og-image.png",
+        url: "/images/og-banner.png",
         width: 1200,
         height: 630,
-        alt: "cln. app preview showing the photo cleaning interface",
+        alt: "cln. - Clean your Photos. iPhone Photos sucks. Try our app.",
       },
     ],
   },
@@ -45,10 +43,9 @@ export const metadata = {
   // Twitter
   twitter: {
     card: "summary_large_image",
-    title: "cln. your Camera Roll's Best Friend",
-    description:
-      "Swipe to wipe. Clean up your gallery with fast, intuitive gestures that make photo decluttering effortless and even fun.",
-    images: ["/images/og-image.png"],
+    title: "Clean your Photos. iPhone Photos sucks. Try our app.",
+    description: "Swipe to wipe. Clean up your gallery with fast, intuitive gestures.",
+    images: ["/images/og-banner.png"],
     creator: "@cln_it",
   },
 
