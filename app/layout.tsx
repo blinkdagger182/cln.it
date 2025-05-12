@@ -91,6 +91,16 @@ export default function RootLayout({
         <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
         <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <meta name="theme-color" content="#E879F9" />
+
+        {/* Explicit Twitter Card Meta Tags */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:site" content="@cln_it" />
+        <meta name="twitter:title" content="Clean your Photos. iPhone Photos sucks. Try our app." />
+        <meta
+          name="twitter:description"
+          content="Swipe to wipe. Clean up your gallery with fast, intuitive gestures."
+        />
+        <meta name="twitter:image" content="https://cln.it.com/images/og-banner.png" />
       </head>
       <body className={inter.className}>
         <ThemeProvider attribute="class" defaultTheme="light" enableSystem disableTransitionOnChange>
