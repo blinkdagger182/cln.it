@@ -29,6 +29,7 @@ export function PhonePreview() {
   const [isAutoPlaying, setIsAutoPlaying] = useState(true)
   const [touchStart, setTouchStart] = useState(0)
   const [touchEnd, setTouchEnd] = useState(0)
+  const [imageError, setImageError] = useState<string | null>(null)
 
   // Auto-advance the carousel
   useEffect(() => {
@@ -87,6 +88,11 @@ export function PhonePreview() {
   // Get the next index for the background phone
   const nextIndex = (currentIndex + 1) % SCREENSHOTS.length
 
+  const handleImageError = (e: React.SyntheticEvent<HTMLImageElement, Event>) => {
+    setImageError(`Failed to load image: ${e.currentTarget.src}`)
+    console.error("Image failed to load:", e.currentTarget.src)
+  }
+
   return (
     <div className="relative">
       {/* Main Phone (Front) */}
@@ -96,6 +102,11 @@ export function PhonePreview() {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
+        {imageError && (
+          <div className="absolute inset-0 flex items-center justify-center bg-gray-100 text-red-500 text-sm p-4 text-center">
+            {imageError}
+          </div>
+        )}
         <Image
           src={SCREENSHOTS[currentIndex].image || "/placeholder.svg"}
           alt={SCREENSHOTS[currentIndex].alt}
@@ -103,6 +114,7 @@ export function PhonePreview() {
           height={700}
           className="phone-screenshot"
           priority
+          onError={handleImageError}
         />
       </div>
 
@@ -139,6 +151,7 @@ export function PhonePreview() {
           width={350}
           height={700}
           className="phone-screenshot opacity-70"
+          onError={handleImageError}
         />
       </div>
 
@@ -152,6 +165,12 @@ export function PhonePreview() {
             aria-label={`Go to screenshot ${index + 1}`}
           />
         ))}
+      </div>
+
+      {/* Debug info */}
+      <div className="hidden">
+        <p>Current image path: {SCREENSHOTS[currentIndex].image}</p>
+        <p>Next image path: {SCREENSHOTS[nextIndex].image}</p>
       </div>
     </div>
   )
