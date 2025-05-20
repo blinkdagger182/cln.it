@@ -1,7 +1,12 @@
+"use client"
+
 import Image from "next/image"
 import Link from "next/link"
+import { useState } from "react"
 
 export default function ImageTestPage() {
+  const [errorImages, setErrorImages] = useState<Record<string, boolean>>({})
+
   // List of all images used in the app
   const images = [
     { path: "/images/cln-logo.png", name: "cln-logo.png" },
@@ -23,6 +28,14 @@ export default function ImageTestPage() {
     { path: "/apple-touch-icon.png", name: "apple-touch-icon.png" },
   ]
 
+  const handleImageError = (path: string) => {
+    console.error(`Failed to load: ${path}`)
+    setErrorImages((prev) => ({
+      ...prev,
+      [path]: true,
+    }))
+  }
+
   return (
     <div className="container mx-auto p-8">
       <h1 className="text-3xl font-bold mb-8">Image Loading Test</h1>
@@ -35,21 +48,21 @@ export default function ImageTestPage() {
           <div key={img.path} className="border p-4 rounded-lg">
             <h2 className="font-semibold mb-2">{img.name}</h2>
             <p className="text-sm text-gray-500 mb-2">{img.path}</p>
-            <div className="relative h-40 bg-gray-100 rounded overflow-hidden">
+            <div
+              className={`relative h-40 ${errorImages[img.path] ? "bg-red-100" : "bg-gray-100"} rounded overflow-hidden`}
+            >
               <Image
                 src={img.path || "/placeholder.svg"}
                 alt={img.name}
                 fill
                 className="object-contain"
-                onError={(e) => {
-                  console.error(`Failed to load: ${img.path}`)
-                  e.currentTarget.parentElement!.classList.add("bg-red-100")
-                  const errorMsg = document.createElement("div")
-                  errorMsg.className = "absolute inset-0 flex items-center justify-center text-red-500 text-sm p-2"
-                  errorMsg.textContent = "Failed to load image"
-                  e.currentTarget.parentElement!.appendChild(errorMsg)
-                }}
+                onError={() => handleImageError(img.path)}
               />
+              {errorImages[img.path] && (
+                <div className="absolute inset-0 flex items-center justify-center text-red-500 text-sm p-2">
+                  Failed to load image
+                </div>
+              )}
             </div>
           </div>
         ))}

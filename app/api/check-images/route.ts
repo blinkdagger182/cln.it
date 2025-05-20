@@ -5,25 +5,27 @@ import path from "path"
 export async function GET() {
   try {
     const publicDir = path.join(process.cwd(), "public")
-    const imagesDir = path.join(publicDir, "images")
+
+    // Check if the public directory exists
+    if (!fs.existsSync(publicDir)) {
+      return NextResponse.json({
+        success: false,
+        error: "Public directory not found",
+      })
+    }
 
     // Check if the images directory exists
+    const imagesDir = path.join(publicDir, "images")
     const imagesExist = fs.existsSync(imagesDir)
 
-    // Get all files in the public directory
-    const publicFiles = fs.existsSync(publicDir)
-      ? fs
-          .readdirSync(publicDir, { withFileTypes: true })
-          .filter((dirent) => dirent.isFile())
-          .map((dirent) => dirent.name)
-      : []
+    // Get list of files in public directory (just names)
+    const publicFiles = fs
+      .readdirSync(publicDir)
+      .filter((name) => !fs.statSync(path.join(publicDir, name)).isDirectory())
 
-    // Get all files in the images directory
+    // Get list of files in images directory if it exists
     const imageFiles = imagesExist
-      ? fs
-          .readdirSync(imagesDir, { withFileTypes: true })
-          .filter((dirent) => dirent.isFile())
-          .map((dirent) => dirent.name)
+      ? fs.readdirSync(imagesDir).filter((name) => !fs.statSync(path.join(imagesDir, name)).isDirectory())
       : []
 
     return NextResponse.json({
@@ -33,12 +35,10 @@ export async function GET() {
       imageFiles,
     })
   } catch (error) {
-    console.error("Error checking images:", error)
     return NextResponse.json(
       {
         success: false,
-        error: "Failed to check images",
-        details: error instanceof Error ? error.message : String(error),
+        error: error instanceof Error ? error.message : "Unknown error",
       },
       { status: 500 },
     )
